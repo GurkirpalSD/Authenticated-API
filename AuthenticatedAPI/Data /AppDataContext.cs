@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Authenticated.Models;
 using AuthenticatedAPI.Models;
 
 namespace AuthenticatedAPI. Data;
