@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using AuthenticatedAPI.Models;
+using Authenticated_Models;
 
-namespace AuthenticatedAPI.Models;
+namespace Authenticated_Models;
 public class ShoppingCart
 {
     public int Id { get; set; }
     public string? User { get; set; }
-    public List<Product>? Products { get; set; }
+    public List<Product>? Products { get; set;  }
     
  
 }

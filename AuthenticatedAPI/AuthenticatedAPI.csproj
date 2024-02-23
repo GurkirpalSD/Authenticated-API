@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Authenticated.Models\Authenticated.Models.csproj" />
     <ProjectReference Include="..\Authenticated.Test\Authenticated.Test.csproj" />
+    <ProjectReference Include="..\Authenticated_Models\Authenticated_Models.csproj" />
   </ItemGroup>
 
 </Project>

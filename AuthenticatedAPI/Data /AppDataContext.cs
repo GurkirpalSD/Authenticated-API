@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Authenticated.Models;
-using AuthenticatedAPI.Models;
+using Authenticated_Models;
 
 namespace AuthenticatedAPI. Data;
 

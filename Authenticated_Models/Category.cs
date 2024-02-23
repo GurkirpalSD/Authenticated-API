@@ -1,5 +1,6 @@
-using AuthenticatedAPI.Models;
-namespace AuthenticatedAPI.Models;
+using Authenticated_Models;
+
+namespace Authenticated_Models;
 public class Category
 {
     public int Id { get; set; }

@@ -1,6 +1,6 @@
-using AuthenticatedAPI.Models;
+using Authenticated_Models;
 
-namespace AuthenticatedAPI.Models;
+namespace Authenticated_Models;
 public class Product
 {
     public int Id { get; set; }
