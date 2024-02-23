@@ -1,5 +1,6 @@
 using AuthenticatedAPI.Models;
 
+namespace AuthenticatedAPI.Models;
 public class Product
 {
     public int Id { get; set; }

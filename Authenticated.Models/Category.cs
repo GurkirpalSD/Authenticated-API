@@ -1,3 +1,4 @@
+using AuthenticatedAPI.Models;
 namespace AuthenticatedAPI.Models;
 public class Category
 {

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using AuthenticatedAPI.Models;
 
+namespace AuthenticatedAPI.Models;
 public class ShoppingCart
 {
     public int Id { get; set; }
