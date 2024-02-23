@@ -9,23 +9,23 @@ using System.Linq;
 [ApiController]
 public class ProductController : ControllerBase
 {
-    private readonly ApplicationDbContext _info;
+    private readonly AppDataContext _info;
 
-    public ProductController(ApplicationDbContext information)
+    public ProductController(AppDataContext information)
     {
         _info = information;
     }
 
     [HttpGet]
-    public ActionResult<IEnumerable<Product>> Get()
+    public async Task <ActionResult<IEnumerable<Product>> Get()
     {
         return Ok(_info.Products.ToList());
     }
 
     [HttpGet("{categoryId}")]
-    public ActionResult<IEnumerable<Product>> GetProductsByCategory(int categoryId)
+    public async Task ActionResult<IEnumerable<Product>> GetProductsByCategory(int categoryId)
     {
-        var category = _info.Categories.Include(c => c.Products).FirstOrDefault(c => c.Id == categoryId);
+        var category = await _info.Products.Where(category => category.Products).FirstOrDefault(category => category.Id == categoryId);
         if (category == null)
         {
             return NotFound("Category not found.");
@@ -35,7 +35,7 @@ public class ProductController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult AddProduct(Product product)
+    public async ActionResult AddProduct(Product product)
     {
         _info.Products.Add(product);
         _info.SaveChanges();
