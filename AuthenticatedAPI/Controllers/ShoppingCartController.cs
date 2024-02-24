@@ -24,11 +24,11 @@ public class ShoppingCartController : ControllerBase
     public async Task<List<ShoppingCart>?> GetProducts()
     {
         var user = User.Identity?.Name ?? string.Empty;
-        var userShoppingCart =  await _info.ShoppingCart
+        var userShoppingCart =  await _info.ShoppingCarts
         .Where(userShoppingCart => userShoppingCart.User == user)
         .ToListAsync();      
 
-        return userShoppingCart?.Product; 
+        return userShoppingCart; 
     }
 
     
@@ -39,7 +39,7 @@ public class ShoppingCartController : ControllerBase
     {
         var user = User.Identity?.Name?? string.Empty;
         var userShoppingCart = await _info.ShoppingCarts.Where(userShoppingCart => userShoppingCart.User == user).ToListAsync();
-        userShoppingCart?.Product.RemoveAll(products => products.Id == id);
+        userShoppingCart? .Products .RemoveAll(products => products.Id == id);
         await _info.SaveChangesAsync();
      
             return Ok();
@@ -57,14 +57,14 @@ public class ShoppingCartController : ControllerBase
             _info.Add(new ShoppingCart()
             {
                 User = user,
-                Product = [new Product()
+                Products = [new Product()
                 {
                     Id = id
                 }]            });
         }
 
       else{
-        userShoppingCart.Product.Add(new Product() {Id = id});
+        userShoppingCart.Products.Add(new Product() {Id = id});
       }
       await _info.SaveChangesAsync();
       return Ok();

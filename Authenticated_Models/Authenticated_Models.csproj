@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Authenticated.Test\Authenticated.Test.csproj" />
-    <ProjectReference Include="..\AuthenticatedAPI\AuthenticatedAPI.csproj" />
+
   </ItemGroup>
 
 </Project>
